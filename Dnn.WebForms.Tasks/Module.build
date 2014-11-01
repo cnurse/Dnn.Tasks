@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <WebsitePath>D:\Websites\Test Site</WebsitePath>
-    <WebsiteModulePath>$(WebsitePath)\DesktopModules\Dnn\Tasks</WebsiteModulePath>
+    <WebsiteModulePath>$(WebsitePath)\DesktopModules\Dnn\WebForms.Tasks</WebsiteModulePath>
     <WebsiteBinPath>$(WebsitePath)\bin</WebsiteBinPath>
   </PropertyGroup>
 
@@ -14,7 +14,7 @@
       <Assemblies Include="bin/*.dll;" />
       <Symbols Include="bin/*.pdb;" />
       <TextFiles Include="*.txt" Exclude="license.txt;releasenotes.txt" />
-      <SourceFiles Include="*.ascx; *.asmx;*.js;*.css; *.ashx" />
+      <SourceFiles Include="*.ascx; *.asmx;*.js;*.css; *.ashx; *.dnn" />
       <ResourceFiles Include="App_LocalResources\*.resx" />
       <JsFiles Include="scripts/*.*" />
       <ConfigFiles Include="*.config" />

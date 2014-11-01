@@ -1,7 +1,7 @@
 ﻿<dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="Tasks" type="Module" version="01.00.00">
-      <friendlyName>Tasks</friendlyName>
+    <package name="Dnn.WebForms.Tasks" type="Module" version="01.00.00">
+      <friendlyName>WebForms Tasks</friendlyName>
       <description/>
       <owner>
         <name>DotNetNuke Corporation</name>
@@ -14,20 +14,29 @@
       <components>
         <component type="Module">
           <desktopModule>
-            <moduleName>Tasks</moduleName>
-            <foldername>Tasks</foldername>
+            <moduleName>Dnn.WebForms.Tasks</moduleName>
+            <foldername>Dnn/WebForms.Tasks</foldername>
             <moduleDefinitions>
               <moduleDefinition>
-                <friendlyName>Tasks</friendlyName>
+                <friendlyName>Webforms Tasks</friendlyName>
                 <moduleControls>
                   <moduleControl>
                     <controlKey />
-                    <controlSrc>DesktopModules/Tasks/Tasks.ascx</controlSrc>
+                    <controlSrc>DesktopModules/Dnn/WebForms.Tasks/Tasks.ascx</controlSrc>
                     <supportsPartialRendering>False</supportsPartialRendering>
                     <controlTitle />
                     <controlType>View</controlType>
                     <iconFile />
-                    <helpUrl>http://help.dotnetnuke.com/070000/default.htm#Building Your Site/Installed Modules/HTML/About the Text HTML Module.htm</helpUrl>
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>DesktopModules/Dnn/WebForms.Tasks/EditTask.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <supportsPopUps>true</supportsPopUps>
                     <viewOrder>0</viewOrder>
                   </moduleControl>
                 </moduleControls>
@@ -37,7 +46,7 @@
         </component>
         <component type="Script">
           <scripts>
-            <basePath>DesktopModules\Tasks</basePath>
+            <basePath>DesktopModules\Dnn\WebForms.Tasks</basePath>
             <script type="Install">
               <name>Install.sql</name>
               <version>01.00.00</version>
@@ -52,13 +61,13 @@
           <assemblies>
             <assembly>
               <path>bin</path>
-              <name>DotNetNuke.Modules.Tasks.dll</name>
+              <name>Dnn.WebForms.Tasks.dll</name>
             </assembly>
           </assemblies>
         </component>
         <component type="ResourceFile">
           <resourceFiles>
-            <basePath>DesktopModules/Tasks</basePath>
+            <basePath>DesktopModules\Dnn\WebForms.Tasks</basePath>
             <resourceFile>
               <name>Resources.zip</name>
             </resourceFile>
