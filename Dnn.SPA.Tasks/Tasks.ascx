@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tasks.ascx.cs" Inherits="Dnn.SPA.Tasks.Tasks" %>
 
-<script type="text/javascript" src="/DesktopModules/Dnn/SPA.Tasks/Scripts/Tasks.js">
+<script type="text/javascript" src="/DesktopModules/Dnn/SPA.Tasks/ClientScripts/Tasks.js">
 
 </script>
 <div id="tasks" runat="Server" class="dnnTasks">

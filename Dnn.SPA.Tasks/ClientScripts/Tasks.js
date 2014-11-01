@@ -33,7 +33,7 @@ SOFTWARE.
         var $self = this;
         
         var serviceFramework = settings.servicesFramework;
-        var baseServicepath = serviceFramework.getServiceRoot('Dnn/SPATasks') + 'TaskService/';
+        var baseServicepath = serviceFramework.getServiceRoot('Dnn/SPA.Tasks') + 'TaskService/';
         var moduleId = settings.moduleId;
         
         function displayMessage(message, cssclass) {

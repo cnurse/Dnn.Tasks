@@ -39,7 +39,7 @@ namespace Dnn.SPA.Tasks.Services
     [ServiceException]
     public class TaskServiceController : DnnApiController
     {
-        //public IDataContext DataContext { get; set; }
+        public IDataContext DataContext { get; set; }
 
         #region DTOs
 
@@ -53,64 +53,61 @@ namespace Dnn.SPA.Tasks.Services
 
         #endregion
 
-        //[HttpPost]
-        //public HttpResponseMessage CreateTask(TaskDTO taskDTO)
-        //{
-        //    var repo = DataContext.GetRepository<Task>();
-        //    var task = new Task
-        //                    {
-        //                        ModuleID = ActiveModule.ModuleID
-        //                    };
-        //    UpdateTask(task, taskDTO);
-        //    repo.Insert(task);
+        [HttpPost]
+        public HttpResponseMessage CreateTask(TaskDTO taskDTO)
+        {
+            var repo = DataContext.GetRepository<Task>();
+            var task = new Task
+            {
+                ModuleID = ActiveModule.ModuleID
+            };
+            UpdateTask(task, taskDTO);
+            repo.Insert(task);
 
-        //    return Request.CreateResponse(HttpStatusCode.OK, new { TaskId = task.TaskID, Result = "success" });
-        //}
+            return Request.CreateResponse(HttpStatusCode.OK, new { TaskId = task.TaskID, Result = "success" });
+        }
 
         [HttpPost]
         [DnnExceptionFilter(MessageKey = "DeleteTask.Error")]
         public HttpResponseMessage DeleteTask(TaskDTO taskDTO)
         {
-            using (var context = DataContext.Instance())
-            {
-                var repo = context.GetRepository<Task>();
-                var task = repo.GetById(taskDTO.TaskId, ActiveModule.ModuleID);
+            var repo = DataContext.GetRepository<Task>();
+            var task = repo.GetById(taskDTO.TaskId, ActiveModule.ModuleID);
 
-                repo.Delete(task);
-                var result = new {Result = "success"};
-                return Request.CreateResponse(HttpStatusCode.OK, result);
-            }
+            repo.Delete(task);
+            var result = new {Result = "success"};
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        //[HttpPost]
-        //public HttpResponseMessage DeleteAllTasks()
-        //{
-        //    var repo = DataContext.GetRepository<Task>();
+        [HttpPost]
+        public HttpResponseMessage DeleteAllTasks()
+        {
+            var repo = DataContext.GetRepository<Task>();
 
-        //    foreach (Task task in repo.Get(ActiveModule.ModuleID))
-        //    {
-        //        repo.Delete(task);
-        //    }
+            foreach (Task task in repo.Get(ActiveModule.ModuleID))
+            {
+                repo.Delete(task);
+            }
 
-        //    return Request.CreateResponse(HttpStatusCode.OK, new { Result = "success" });
-        //}
+            return Request.CreateResponse(HttpStatusCode.OK, new { Result = "success" });
+        }
 
-        //[HttpGet]
-        //public HttpResponseMessage GetTasks()
-        //{
-        //    return Request.CreateResponse(HttpStatusCode.OK, DataContext.GetRepository<Task>().Get(ActiveModule.ModuleID));
-        //}
+        [HttpGet]
+        public HttpResponseMessage GetTasks()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, DataContext.GetRepository<Task>().Get(ActiveModule.ModuleID));
+        }
 
-        //[HttpPost]
-        //public HttpResponseMessage UpdateTask(TaskDTO taskDTO)
-        //{
-        //    var repo = DataContext.GetRepository<Task>();
-        //    var task = repo.GetById(taskDTO.TaskId, ActiveModule.ModuleID);
-        //    UpdateTask(task, taskDTO);
-        //    repo.Update(task);
+        [HttpPost]
+        public HttpResponseMessage UpdateTask(TaskDTO taskDTO)
+        {
+            var repo = DataContext.GetRepository<Task>();
+            var task = repo.GetById(taskDTO.TaskId, ActiveModule.ModuleID);
+            UpdateTask(task, taskDTO);
+            repo.Update(task);
 
-        //    return Request.CreateResponse(HttpStatusCode.OK, new { Result = "success" });
-        //}
+            return Request.CreateResponse(HttpStatusCode.OK, new { Result = "success" });
+        }
 
         #region Private Methods
 

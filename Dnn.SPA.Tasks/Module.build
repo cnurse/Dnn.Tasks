@@ -15,9 +15,9 @@
       <Assemblies Include="bin/*.dll;" />
       <Symbols Include="bin/*.pdb;" />
       <TextFiles Include="*.txt" Exclude="license.txt;releasenotes.txt" />
-      <SourceFiles Include="*.ascx; *.asmx;*.js;*.css; *.ashx" />
+      <SourceFiles Include="*.ascx; *.asmx;*.js;*.css; *.ashx; *.dnn" />
       <ResourceFiles Include="App_LocalResources\*.resx" />
-      <JsFiles Include="scripts/*.*" />
+      <JsFiles Include="ClientScripts/*.*" />
       <ConfigFiles Include="*.config" />
       <Images Include="Images/*.*" />
     </ItemGroup>
@@ -31,7 +31,7 @@
   <Target Name="CopyFiles" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(WebsiteModulePath)" />
     <Copy SourceFiles="@(Images)" DestinationFolder="$(WebsiteModulePath)\Images" />
-    <Copy SourceFiles="@(JsFiles)" DestinationFolder="$(WebsiteModulePath)\Scripts" />
+    <Copy SourceFiles="@(JsFiles)" DestinationFolder="$(WebsiteModulePath)\ClientScripts" />
     <Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(WebsiteModulePath)\App_LocalResources" />
   </Target>
   

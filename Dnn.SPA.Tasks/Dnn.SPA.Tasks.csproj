@@ -93,7 +93,7 @@
     <Content Include="license.txt" />
     <Content Include="Module.css" />
     <Content Include="releaseNotes.txt" />
-    <Content Include="Scripts\Tasks.js" />
+    <Content Include="ClientScripts\Tasks.js" />
     <Content Include="Tasks.ascx" />
   </ItemGroup>
   <ItemGroup>
