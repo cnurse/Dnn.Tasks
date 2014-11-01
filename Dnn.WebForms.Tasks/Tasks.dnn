@@ -1,0 +1,70 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Tasks" type="Module" version="01.00.00">
+      <friendlyName>Tasks</friendlyName>
+      <description/>
+      <owner>
+        <name>DotNetNuke Corporation</name>
+        <organization>DotNetNuke Corporation</organization>
+        <url>http://www.dotnetnuke.com</url>
+        <email>support@dotnetnuke.com</email>
+      </owner>
+      <license src="license.txt" />
+      <releaseNotes src="releaseNotes.txt" />
+      <components>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>Tasks</moduleName>
+            <foldername>Tasks</foldername>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Tasks</friendlyName>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/Tasks/Tasks.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl>http://help.dotnetnuke.com/070000/default.htm#Building Your Site/Installed Modules/HTML/About the Text HTML Module.htm</helpUrl>
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\Tasks</basePath>
+            <script type="Install">
+              <name>Install.sql</name>
+              <version>01.00.00</version>
+            </script>
+            <script type="UnInstall">
+              <name>UnInstall.sql</name>
+              <version>01.00.00</version>
+            </script>
+          </scripts>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <path>bin</path>
+              <name>DotNetNuke.Modules.Tasks.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/Tasks</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

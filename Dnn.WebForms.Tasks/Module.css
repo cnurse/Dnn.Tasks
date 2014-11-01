@@ -1,0 +1,11 @@
+﻿.dnnTasks label {
+    display: inline-block;
+    width: 250px;
+}
+.dnnTasks .taskListRow td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.dnnTasks .taskListHeader td {
+    font-weight: bold;
+}

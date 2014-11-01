@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <WebsitePath>D:\Websites\Test Site</WebsitePath>
+    <WebsiteModulePath>$(WebsitePath)\DesktopModules\Dnn\Tasks</WebsiteModulePath>
+    <WebsiteBinPath>$(WebsitePath)\bin</WebsiteBinPath>
+  </PropertyGroup>
+
+  <Target Name="AfterBuild" DependsOnTargets="GetFiles;CopyBin;CopyFiles">
+  </Target>
+  
+  <Target Name="GetFiles">
+    <ItemGroup>
+      <Assemblies Include="bin/*.dll;" />
+      <Symbols Include="bin/*.pdb;" />
+      <TextFiles Include="*.txt" Exclude="license.txt;releasenotes.txt" />
+      <SourceFiles Include="*.ascx; *.asmx;*.js;*.css; *.ashx" />
+      <ResourceFiles Include="App_LocalResources\*.resx" />
+      <JsFiles Include="scripts/*.*" />
+      <ConfigFiles Include="*.config" />
+      <Images Include="Images/*.*" />
+    </ItemGroup>
+  </Target>
+  
+  <Target Name="CopyBin" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Copy SourceFiles="@(Assemblies)" DestinationFolder="$(WebsiteBinPath)" />
+    <Copy SourceFiles="@(Symbols)" DestinationFolder="$(WebsiteBinPath)" />
+  </Target>
+  
+  <Target Name="CopyFiles" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(WebsiteModulePath)" />
+    <Copy SourceFiles="@(Images)" DestinationFolder="$(WebsiteModulePath)\Images" />
+    <Copy SourceFiles="@(JsFiles)" DestinationFolder="$(WebsiteModulePath)\Scripts" />
+    <Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(WebsiteModulePath)\App_LocalResources" />
+  </Target>
+  
+</Project>

@@ -1,4 +1,4 @@
-Dnn.ToDo
-========
+Dnn.Tasks
+=========
 
-A repository of ToDo modules built using different approaches to module development
+A repository of Tasks modules built using different approaches to module development
